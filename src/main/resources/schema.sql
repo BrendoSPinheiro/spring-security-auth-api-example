@@ -1,0 +1,15 @@
+DROP SCHEMA IF EXISTS auth_api CASCADE;
+
+DROP TABLE IF EXISTS auth_api.users;
+
+CREATE SCHEMA IF NOT EXISTS auth_api;
+
+CREATE TABLE IF NOT EXISTS auth_api.users
+(
+    id         uuid PRIMARY KEY,
+    name       VARCHAR(255) NOT NULL,
+    email      VARCHAR(255) NOT NULL UNIQUE,
+    password   VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

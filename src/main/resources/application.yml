@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: auth-api
+  security:
+    user:
+      name: admin
+  datasource:
+    url: jdbc:postgresql://localhost:5432/auth_api_db
+    username: admin
+    password: admin
+    driver-class-name: org.postgresql.Driver
+    name: auth_api_db
+    generate-unique-name: false
+  h2:
+    console:
+      enabled: true
+  sql:
+    init:
+      mode: always
+springdoc:
+  show-actuator: true
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /docs
+
+server:
+  port: ${PORT:8080}
+  servlet:
+    context-path: /api
+
+myProps:
+  server-url: http://localhost:8080
+
+
